@@ -5,7 +5,7 @@ module Renderer where
   import Objects
 
   renderObject :: Canvas -> GameObject -> Picture ()
-  renderObject canvas object = fill $ rect (x object, y object) (x object + width object, y object + height object)
+  renderObject canvas object = draw (image object) (x object, y object)
 
   renderFrame :: Canvas -> GameState ->  IO ()
   renderFrame canvas state = do

@@ -16,8 +16,9 @@ module Game where
 
   startGame :: Canvas -> IO ()
   startGame canvas = do
+    image <- loadBitmap "images/stickman.png"
     let initialState = GameState {
-      objects=[GameObject {x=30, y=40, width=40, height=60}]
-    }
+          objects=[GameObject {x=30, y=40, width=24, height=32, image=image}]
+        }
     requestAnimationFrame $ doGameLoop initialState canvas
     return ()
