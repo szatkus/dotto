@@ -5,6 +5,7 @@ module Renderer where
   import Objects
 
   renderObject :: Canvas -> GameObject -> Picture ()
+  renderObject canvas (Player object) = renderObject canvas object
   renderObject canvas object = drawScaled (image object) (Rect (x object) (y object) (width object) (height object))
 
   renderFrame :: Canvas -> GameState ->  IO ()
